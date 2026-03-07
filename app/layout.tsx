@@ -1,7 +1,13 @@
 import type { Metadata } from "next";
 import {  Playfair_Display , Manrope } from "next/font/google";
 import "./globals.css";
+import { Plus_Jakarta_Sans } from "next/font/google";
 
+const jakartaSans = Plus_Jakarta_Sans({
+  subsets: ["latin"],
+  variable: "--font-jakarta-sans", 
+  display: "swap",
+});
 const manrope = Manrope({
   subsets: ["latin"],
   variable: "--font-manrope",
@@ -24,7 +30,7 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body
-        className={` ${manrope.variable} ${playfair.variable} antialiased`}
+        className={` ${manrope.variable} ${playfair.variable} ${jakartaSans.variable} antialiased`}
       >
         {children}
       </body>
